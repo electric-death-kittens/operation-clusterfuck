@@ -1,3 +1,8 @@
+
+
+
+
+
 ##############################
 #   Emily's root additions   #
 ##############################
@@ -10,16 +15,57 @@ RUN apt update
 # install emacs
 RUN apt install -y emacs
 
-# install venv and pip
-RUN apt install -y python3-venv
+##### install venv
+####RUN apt install -y python3-venv
+
+# install pip
 RUN apt install -y python3-pip
 
 # install less terminal pager
 RUN apt install less
 
-# copy and change the ownership of the wrapper
-COPY python_enablement_wrapper.sh /home/node/python_enablement_wrapper.sh
-RUN chown node:node /home/node/python_enablement_wrapper.sh
+# install dependencies and create user for brew
+RUN apt install -y build-essential git procps file
+RUN useradd -m -s /bin/bash linuxbrew
+RUN echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+##### copy the wrapper
+####COPY python_enablement_wrapper.sh /home/node/python_enablement_wrapper.sh
+####RUN chown node:node /home/node/python_enablement_wrapper.sh
+
+###################################
+#   Emily's linuxbrew additions   #
+###################################
+
+USER linuxbrew
+
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+
+RUN brew tap steipete/tap
+
+
+
+
+
+
+####USER root
+
+#########RUN chown -R node /home/linuxbrew/.linuxbrew/Cellar /home/linuxbrew/.linuxbrew/Homebrew /home/linuxbrew/.linuxbrew/bin /home/linuxbrew/.linuxbrew/etc /home/linuxbrew/.linuxbrew/etc/bash_completion.d /home/linuxbrew/.linuxbrew/include /home/linuxbrew/.linuxbrew/lib /home/linuxbrew/.linuxbrew/opt /home/linuxbrew/.linuxbrew/sbin /home/linuxbrew/.linuxbrew/share /home/linuxbrew/.linuxbrew/share/doc /home/linuxbrew/.linuxbrew/share/man /home/linuxbrew/.linuxbrew/share/man/man1 /home/linuxbrew/.linuxbrew/share/zsh /home/linuxbrew/.linuxbrew/share/zsh/site-functions /home/linuxbrew/.linuxbrew/var/homebrew/linked /home/linuxbrew/.linuxbrew/var/homebrew/locks
+
+####RUN chown -R node:node /home/linuxbrew/.linuxbrew
+
+
+
+
+
+
+
+
+
+
+
 
 ##############################
 #   Emily's node additions   #
@@ -27,27 +73,49 @@ RUN chown node:node /home/node/python_enablement_wrapper.sh
 
 USER node
 
-# Set up Python virtual environment
-ENV PYTHON_VIRTUAL_ENV=/home/node/venv
-RUN python3 -m venv $PYTHON_VIRTUAL_ENV
+# set up Python virtual environment
+####ENV PYTHON_VIRTUAL_ENV=/home/node/venv
+####RUN python3 -m venv $PYTHON_VIRTUAL_ENV
 
-# Add venv to PATH so 'python' and 'pip' use the venv automatically
-ENV PATH="$PYTHON_VIRTUAL_ENV/bin:$PATH"
+# add brew to PATH
+ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
-# Install dependencies
+##### add venv to PATH so 'python' and 'pip' use the venv automatically
+####ENV PATH="$PYTHON_VIRTUAL_ENV/bin:$PATH"
+
+# verify brew installation
+RUN brew --version
+
+
+
+
+
+########RUN chmod u+w /home/linuxbrew/.linuxbrew/Cellar /home/linuxbrew/.linuxbrew/Homebrew /home/linuxbrew/.linuxbrew/bin /home/linuxbrew/.linuxbrew/etc /home/linuxbrew/.linuxbrew/etc/bash_completion.d /home/linuxbrew/.linuxbrew/include /home/linuxbrew/.linuxbrew/lib /home/linuxbrew/.linuxbrew/opt /home/linuxbrew/.linuxbrew/sbin /home/linuxbrew/.linuxbrew/share /home/linuxbrew/.linuxbrew/share/doc /home/linuxbrew/.linuxbrew/share/man /home/linuxbrew/.linuxbrew/share/man/man1 /home/linuxbrew/.linuxbrew/share/zsh /home/linuxbrew/.linuxbrew/share/zsh/site-functions /home/linuxbrew/.linuxbrew/var/homebrew/linked /home/linuxbrew/.linuxbrew/var/homebrew/locks
+
+####RUN chmod -R u+w /home/linuxbrew/.linuxbrew
+
+
+
+
+
+
+
+# install dependencies
 # COPY requirements.txt .
-# RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --break-system-packages --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN pip install --no-cache-dir pandas
-RUN pip install --no-cache-dir feedparser
-RUN pip install --no-cache-dir papermill
-RUN pip install --no-cache-dir requests
+# install dependencies
+RUN pip install --break-system-packages --no-cache-dir pandas
+RUN pip install --break-system-packages --no-cache-dir feedparser
+RUN pip install --break-system-packages --no-cache-dir papermill
+RUN pip install --break-system-packages --no-cache-dir requests
 
-# Enable interactive access
-RUN touch /home/node/.bashrc
-RUN echo "source $PYTHON_VIRTUAL_ENV/bin/activate" >> /home/node/.bashrc
+##### enable interactive access
+####RUN touch /home/node/.bashrc
+####RUN echo "source $PYTHON_VIRTUAL_ENV/bin/activate" >> /home/node/.bashrc
 
-# Run the wrapper
-RUN chmod +x /home/node/python_enablement_wrapper.sh
-CMD ["/home/node/python_enablement_wrapper.sh"]
+##### run the wrapper
+####RUN chmod +x /home/node/python_enablement_wrapper.sh
+####CMD ["/home/node/python_enablement_wrapper.sh"]
+
+
