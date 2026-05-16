@@ -1,0 +1,46 @@
+##############################
+#   Emily's root additions   #
+##############################
+
+USER root
+
+# update
+RUN apt update
+
+# install emacs
+RUN apt install -y emacs
+
+# install venv and pip
+RUN apt install -y python3-venv
+RUN apt install -y python3-pip
+
+# install less terminal pager
+RUN apt install less
+
+
+##############################
+#   Emily's node additions   #
+##############################
+
+USER node
+
+# Set up Python virtual environment
+ENV PYTHON_VIRTUAL_ENV=/home/node/venv
+RUN python3 -m venv $PYTHON_VIRTUAL_ENV
+
+# Add venv to PATH so 'python' and 'pip' use the venv automatically
+ENV PATH="$PYTHON_VIRTUAL_ENV/bin:$PATH"
+
+# Install dependencies
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# Install dependencies
+RUN pip install --no-cache-dir pandas
+RUN pip install --no-cache-dir feedparser
+RUN pip install --no-cache-dir papermill
+RUN pip install --no-cache-dir requests
+
+# Enable interactive access
+RUN touch /home/node/.bashrc
+RUN echo "source $PYTHON_VIRTUAL_ENV/bin/activate" >> /home/node/.bashrc
