@@ -17,6 +17,9 @@ RUN apt install -y python3-pip
 # install less terminal pager
 RUN apt install less
 
+# copy and change the ownership of the wrapper
+COPY python_enablement_wrapper.sh /home/node/python_enablement_wrapper.sh
+RUN chown node:node /home/node/python_enablement_wrapper.sh
 
 ##############################
 #   Emily's node additions   #
@@ -44,3 +47,7 @@ RUN pip install --no-cache-dir requests
 # Enable interactive access
 RUN touch /home/node/.bashrc
 RUN echo "source $PYTHON_VIRTUAL_ENV/bin/activate" >> /home/node/.bashrc
+
+# Run the wrapper
+RUN chmod +x /home/node/python_enablement_wrapper.sh
+CMD ["/home/node/python_enablement_wrapper.sh"]
