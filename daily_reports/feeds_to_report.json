@@ -1,0 +1,12 @@
+{
+  "feeds": [
+    {
+      "url": "https://api.theregister.com/api/v1/article?query=tag:%22ai%20and%20ml%22&orderBy=published&site_id=2&remapper=rss",
+      "title": "The Register: AI & ML"
+    },
+    {
+      "url": "https://api.theregister.com/api/v1/article?query=tag:offbeat&orderBy=published&site_id=2&remapper=rss",
+      "title": "The Register: Offbeat"
+    }
+  ]
+}
