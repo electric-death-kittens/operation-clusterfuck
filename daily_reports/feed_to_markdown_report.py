@@ -29,8 +29,11 @@ def convert_feed_to_df(feed_url, hours_cutoff = 24):
     list_dict_entry = []
     for entry in feed.entries:
 
-        time_struct = entry.published_parsed
-        dt = datetime.datetime.fromtimestamp(mktime(time_struct))
+        try:
+            time_struct = entry.published_parsed
+            dt = datetime.datetime.fromtimestamp(mktime(time_struct))
+        except:
+            continue
 
         if dt < dt_cutoff:
             continue
