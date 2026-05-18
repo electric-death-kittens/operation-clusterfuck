@@ -1,12 +1,200 @@
 {
-  "feeds": [
-    {
-      "url": "https://api.theregister.com/api/v1/article?query=tag:%22ai%20and%20ml%22&orderBy=published&site_id=2&remapper=rss",
-      "title": "The Register: AI & ML"
-    },
-    {
-      "url": "https://api.theregister.com/api/v1/article?query=tag:offbeat&orderBy=published&site_id=2&remapper=rss",
-      "title": "The Register: Offbeat"
-    }
-  ]
+    "feeds": [
+	{
+	    "title": "The Register: AI & ML"
+	    "url": "https://api.theregister.com/api/v1/article?query=tag:%22ai%20and%20ml%22&orderBy=published&site_id=2&remapper=rss",
+	},
+	{
+	    "title": "The Register: Offbeat"
+	    "url": "https://api.theregister.com/api/v1/article?query=tag:offbeat&orderBy=published&site_id=2&remapper=rss",
+	},
+	{
+	    'title': 'AI News RSS Feed',
+            'url': 'https://www.artificialintelligence-news.com/feed/'
+	},
+        {
+	    'title': 'AI Trends - The Best Source for AI News and Events RSS Feed',
+            'url': 'https://www.aitrends.com/feed/'
+	},
+        {
+	    'title': 'DailyAI RSS Feed',
+	    'url': 'https://dailyai.com/feed/'
+	},
+        {
+	    'title': 'The Rundown AI RSS Feed',
+            'url': 'https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml'
+	},
+        {
+	    'title': 'AI Insider RSS Feed',
+            'url': 'https://theaiinsider.tech/feed/'
+	},
+        {
+	    'title': 'AIwire RSS Feed',
+	    'url': 'https://www.aiwire.net/feed'
+	},
+        {
+	    'title': 'MIT News » Artificial intelligence RSS Feed',
+            'url': 'http://news.mit.edu/rss/topic/artificial-intelligence2'
+	},
+        {
+	    'title': 'Machine Intelligence Research Institute Blog RSS Feed',
+            'url': 'https://intelligence.org/feed/'
+	},
+        {
+	    'title': 'ΑΙhub RSS Feed',
+            'url': 'https://aihub.org/feed/?cat=-473'
+	},
+        {
+	    'title': 'ELEDIA E-AIR RSS Feed',
+            'url': 'http://www.eledia.org/e-air/feed/'
+	},
+        {
+	    'title': 'The Verge » AI RSS Feed',
+            'url': 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml'
+	},
+        {
+	    'title': 'Ars Technica » AI RSS Feed',
+            'url': 'https://arstechnica.com/ai/feed/'
+	},
+        {
+	    'title': 'MIT Technology Review » Artificial Intelligence RSS Feed',
+            'url': 'https://www.technologyreview.com/topic/artificial-intelligence/feed'
+	},
+        {
+	    'title': "O'Reilly Media » AI & ML RSS Feed",
+            'url': 'https://www.oreilly.com/radar/topics/ai-ml/feed/index.xml'
+	},
+        {
+	    'title': 'Data Machina RSS Feed',
+            'url': 'https://datamachina.substack.com/feed'
+	},
+        {
+	    'title': "Chatbot's Life RSS Feed",
+            'url': 'https://rss.beehiiv.com/feeds/W0866OdVPj.xml'
+	},
+        {
+	    'title': 'Stable Diffusion Practical Guide RSS Feed',
+            'url': 'https://www.sdexample.com/feeds/posts/default'
+	},
+        {
+	    'title': 'GPTZero Blog RSS Feed',
+            'url': 'https://gptzero.me/news/rss/'
+	},
+        {
+	    'title': 'AWS Blog » Artificial Learning RSS Feed',
+            'url': 'https://aws.amazon.com/blogs/machine-learning/category/artificial-intelligence/feed/'
+	},
+        {
+	    'title': 'AWS News Blog » Artificial Intelligence RSS Feed',
+            'url': 'https://aws.amazon.com/blogs/aws/category/artificial-intelligence/feed/'
+	},
+        {
+	    'title': 'Microsoft » AI RSS Feed',
+            'url': 'https://news.microsoft.com/source/topics/ai/feed/'
+	},
+        {
+	    'title': 'DataRobot Blog RSS Feed',
+            'url': 'https://www.datarobot.com/blog/feed/'
+	},
+        {
+	    'title': 'Nanonets Blog RSS Feed',
+            'url': 'https://nanonets.com/blog/rss/'
+	},
+        {
+	    'title': 'Pandio Blog RSS Feed',
+	    'url': 'https://pandio.com/feed/'
+	},
+        {
+	    'title': 'DeepCognition.ai Blog RSS Feed',
+            'url': 'https://deepcognition.ai/feed/'
+	},
+        {
+	    'title': 'Marketing Artificial Intelligence Institute Blog RSS Feed',
+            'url': 'http://www.marketingaiinstitute.com/blog/rss.xml'
+	},
+        {
+	    'title': 'Kore.ai RSS Feed',
+	    'url': 'https://blog.kore.ai/rss.xml'
+	},
+        {
+	    'title': 'Vue.ai Blog RSS Feed',
+            'url': 'https://www.vue.ai/blog/feed/'
+	},
+        {
+	    'title': 'Unbabel Blog RSS Feed',
+            'url': 'https://unbabel.com/category/blog/feed/'
+	},
+        {
+	    'title': 'Chooch RSS Feed',
+	    'url': 'https://chooch.ai/feed/'
+	},
+        {
+	    'title': 'Yseop Blog RSS Feed',
+            'url': 'https://yseop.com/category/blog/feed/'
+	},
+        {
+	    'title': 'The Conversation » Artificial intelligence (AI) RSS Feed',
+            'url': 'https://theconversation.com/topics/artificial-intelligence-ai-90/articles.atom'
+	},
+        {
+	    'title': 'AI for Good Blog RSS Feed',
+            'url': 'https://aiforgood.itu.int/feed/'
+	},
+        {
+	    'title': 'The India Express » Artificial Intelligence RSS Feed',
+            'url': 'https://indianexpress.com/section/technology/artificial-intelligence/feed/'
+	},
+        {
+	    'title': 'AI 2 People RSS Feed',
+            'url': 'https://ai2people.com/feed/'
+	},
+        {
+	    'title': 'Zeroth Principles of AI RSS Feed',
+            'url': 'https://zerothprinciples.substack.com/feed'
+	},
+        {
+	    'title': 'Kavita Ganesan RSS Feed',
+            'url': 'http://kavita-ganesan.com/feed'
+	},
+        {
+	    'title': 'DLabs.AI Blog » AI RSS Feed',
+            'url': 'https://dlabs.ai/feed/'
+	},
+        {
+	    'title': 'AI Revolution Blog RSS Feed',
+            'url': 'https://airevolution.blog/feed/'
+	},
+        {
+	    'title': 'Federal News Network » Artificial Intelligence RSS Feed',
+            'url': 'https://federalnewsnetwork.com/category/technology-main/artificial-intelligence/feed/'
+	},
+        {
+	    'title': 'Dxcover Blog RSS Feed',
+            'url': 'https://www.dxcover.com/feed/'
+	},
+        {
+	    'title': 'Neysa Newsroom RSS Feed',
+            'url': 'https://neysa.ai/feed/'
+	},
+        {
+	    'title': 'SAAL RSS Feed',
+	    'url': 'https://saal.ai/feed/'
+	},
+        {
+	    'title': 'Cogito Tech Blog RSS Feed',
+            'url': 'https://www.cogitotech.com/feed/'
+	},
+        {
+	    'title': 'Crunchbase News » AI RSS Feed',
+            'url': 'https://news.crunchbase.com/sections/ai/feed/'
+	},
+        {
+	    'title': 'GeekWire » AI RSS Feed',
+            'url': 'https://www.geekwire.com/tag/ai/feed/'
+	},
+        {
+	    'title': 'Artisse AI Blog RSS Feed',
+            'url': 'https://artisse.ai/feed/'
+	}
+    ]
 }
